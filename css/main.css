@@ -1,673 +1,614 @@
-*{
+/* =========================================================
+   HEATMAPSTUDIO - MAIN STYLESHEET
+   Fully Responsive: Desktop / Tablet / Mobile
+========================================================= */
 
-margin:0;
+/* =========================================================
+   RESET
+========================================================= */
 
-padding:0;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-box-sizing:border-box;
-
+html {
+    width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 body {
-    min-height: auto;
-    font-family: Arial, Helvetica, sans-serif;
-        background:#F8FAFC;
+    width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
+    background: #f5f7fb;
+    color: #1e293b;
+    line-height: 1.5;
 }
 
-main {
-    flex: 1;
+
+/* =========================================================
+   GLOBAL ELEMENTS
+========================================================= */
+
+img {
+    max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   HEADER / NAVIGATION
+========================================================= */
+
+header {
+    width: 100%;
     display: flex;
-    flex-direction: column;
-}
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
 
-header{
+    padding: 16px clamp(20px, 5vw, 80px);
 
-display:flex;
+    background: white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
 
-justify-content:space-between;
-
-align-items:center;
-
-padding:20px 80px;
-
-background:white;
-
-box-shadow:0 5px 20px rgba(0,0,0,.06);
-
-position:sticky;
-
-top:0;
-
-z-index:999;
-
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
 .logo {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 40px;
+
+    min-width: 0;
+
+    font-size: clamp(24px, 3vw, 40px);
     font-weight: 700;
+    white-space: nowrap;
 }
 
 .logo img {
-    width: 100px;
-    height: 100px;
+    width: clamp(55px, 7vw, 100px);
+    height: clamp(55px, 7vw, 100px);
     object-fit: contain;
-}
-
-nav{
-
-display:flex;
-
-gap:35px;
-
-}
-
-nav a{
-
-text-decoration:none;
-
-color:#334155;
-
-font-weight:600;
-
-}
-
-nav a:hover{
-
-color:#2563eb;
-
-}
-
-.login{
-
-background:#2563eb;
-
-color:white;
-
-border:none;
-
-padding:12px 24px;
-
-border-radius:12px;
-
-cursor:pointer;
-
-}
-
-.hero{
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-padding:100px 80px;
-
-}
-
-.hero-left{
-
-width:55%;
-
-}
-
-.hero-left h1{
-
-font-size:65px;
-
-line-height:1.2;
-
-margin-bottom:25px;
-
-}
-
-.hero-left span{
-
-color:#2563eb;
-
-}
-
-.hero-left p{
-
-font-size:20px;
-
-color:#64748b;
-
-margin-bottom:35px;
-
-}
-
-.hero-buttons button{
-
-padding:18px 35px;
-
-margin-right:15px;
-
-border:none;
-
-border-radius:14px;
-
-cursor:pointer;
-
-font-size:17px;
-
-}
-
-.primary{
-
-background:#2563eb;
-
-color:white;
-
-}
-
-.secondary{
-
-background:white;
-
-border:2px solid #2563eb;
-
-color:#2563eb;
-
-}
-
-/* ===========================
-   HERO CARD
-=========================== */
-
-.hero-card{
-
-    width:420px;
-
-    padding:50px;
-
-    border-radius:24px;
-
-    background:rgba(255,255,255,.9);
-
-    backdrop-filter:blur(15px);
-
-    box-shadow:
-        0 20px 60px rgba(37,99,235,.12);
-
-    transition:.35s;
-    
-    display:flex;
-
-    flex-direction: column;
-
-    flex: 1;
-
-}
-
-.hero-card:hover{
-
-    transform:translateY(-8px);
-
-    box-shadow:
-        0 30px 70px rgba(37,99,235,.20);
-
-}
-
-.hero-card h2{
-
-    font-size:32px;
-
-    margin-bottom:20px;
-
-}
-
-.hero-card p{
-
-    color:#64748b;
-
-    line-height:2;
-
-    margin-bottom:30px;
-
-}
-
-.hero-card .primary{
-
-    display:flex;
-
-    flex-direction: column;
-
-    padding:14px 24px;
-
-}
-
-
-/******
-
-*********************/
-
-.modules{
-
-padding:80px;
-
-}
-
-.modules h2{
-
-text-align:center;
-
-font-size:40px;
-
-margin-bottom:60px;
-
-}
-
-.grid{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-
-gap:30px;
-
-}
-
-.module{
-
-background:white;
-
-padding:35px;
-
-border-radius:18px;
-
-text-align:center;
-
-font-size:40px;
-
-box-shadow:0 5px 25px rgba(0,0,0,.06);
-
-transition:.3s;
-
-cursor:pointer;
-
-}
-
-.module:hover{
-
-transform:translateY(-10px);
-
-}
-
-.module h3{
-
-font-size:25px;
-
-margin-top:15px;
-
-}
-
-.module p{
-
-font-size:16px;
-
-color:#64748b;
-
-margin-top:10px;
-
-}
-
-.features{
-
-display:grid;
-
-grid-template-columns:repeat(4,1fr);
-
-padding:80px;
-
-gap:25px;
-
-}
-
-.feature{
-
-background:#2563eb;
-
-color:white;
-
-padding:35px;
-
-text-align:center;
-
-font-size:22px;
-
-border-radius:18px;
-
-}
-
-footer {
-    padding: 35px;
-    text-align: center;
-    background: #0f172a;
-    color: white;
-    margin-top: auto;
     flex-shrink: 0;
 }
 
-.dashboard{
-
-display:grid;
-
-grid-template-columns:340px 1fr;
-
-gap:30px;
-
-margin-top:40px;
-
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(15px, 2.5vw, 35px);
+    flex-wrap: wrap;
 }
 
-.left-panel{
-
-display:flex;
-
-flex-direction:column;
-
-gap:25px;
-
+nav a {
+    text-decoration: none;
+    color: #334155;
+    font-weight: 600;
+    white-space: nowrap;
 }
 
-.right-panel{
-
-display:flex;
-
-flex-direction:column;
-
-gap:25px;
-
+nav a:hover {
+    color: #2563eb;
 }
 
-.card{
-
-background:white;
-
-padding:25px;
-
-border-radius:18px;
-
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.card h2{
+.login {
+    background: #2563eb;
+    color: white;
 
-margin-bottom:20px;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
 
+    cursor: pointer;
+    white-space: nowrap;
+
+    transition: 0.25s ease;
 }
 
-.upload-area{
-
-border:2px dashed #cbd5e1;
-
-padding:35px;
-
-border-radius:16px;
-
-text-align:center;
-
+.login:hover {
+    background: #1d4ed8;
 }
 
-.upload-icon{
 
-font-size:60px;
+/* =========================================================
+   HERO SECTION
+========================================================= */
 
-margin-bottom:15px;
+.hero {
+    width: 100%;
 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 50px;
+
+    padding:
+        clamp(50px, 8vw, 100px)
+        clamp(20px, 6vw, 80px);
 }
 
-.upload-area input{
-
-margin:20px 0;
-
-width:100%;
-
+.hero-left {
+    width: 55%;
+    min-width: 0;
 }
 
-.demo-btn{
-
-margin-top:20px;
-
-width:100%;
-
+.hero-left h1 {
+    font-size: clamp(40px, 5vw, 65px);
+    line-height: 1.2;
+    margin-bottom: 25px;
 }
 
-.recent-list{
-
-list-style:none;
-
+.hero-left span {
+    color: #2563eb;
 }
 
-.recent-list li{
-
-padding:12px;
-
-border-bottom:1px solid #e5e7eb;
-
-color:#475569;
-
+.hero-left p {
+    font-size: clamp(17px, 1.5vw, 20px);
+    color: #64748b;
+    margin-bottom: 35px;
 }
 
-.dataset-info{
-
-display:grid;
-
-grid-template-columns:repeat(4,1fr);
-
-gap:20px;
-
-text-align:center;
-
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
-.dataset-info div{
+.hero-buttons button {
+    padding: 18px 35px;
 
-background:#f8fafc;
+    border: none;
+    border-radius: 14px;
 
-padding:20px;
-
-border-radius:12px;
-
+    cursor: pointer;
+    font-size: 17px;
 }
+
+.primary {
+    background: #2563eb;
+    color: white;
+
+    border: none;
+    border-radius: 10px;
+
+    padding: 12px 20px;
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.primary:hover {
+    background: #1d4ed8;
+}
+
+.secondary {
+    background: white;
+    border: 2px solid #2563eb;
+    color: #2563eb;
+
+    padding: 12px 20px;
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.secondary:hover {
+    background: #eff6ff;
+}
+
+
+/* =========================================================
+   HERO CARD
+========================================================= */
+
+.hero-card {
+    display: block;
+
+    width: min(420px, 100%);
+    flex-shrink: 0;
+
+    padding: clamp(25px, 4vw, 40px);
+
+    border-radius: 24px;
+
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 20px 60px rgba(37, 99, 235, 0.12);
+
+    transition: 0.35s;
+
+    text-decoration: none;
+    color: inherit;
+}
+
+.hero-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 30px 70px rgba(37, 99, 235, 0.20);
+}
+
+.hero-card h2 {
+    font-size: clamp(26px, 3vw, 35px);
+    margin-bottom: 20px;
+}
+
+.hero-card p {
+    color: #64748b;
+    line-height: 2;
+}
+
+
+/* =========================================================
+   MODULES
+========================================================= */
+
+.modules {
+    padding:
+        clamp(50px, 7vw, 80px)
+        clamp(20px, 6vw, 80px);
+}
+
+.modules h2 {
+    text-align: center;
+    font-size: clamp(32px, 4vw, 40px);
+    margin-bottom: 60px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+    gap: 30px;
+}
+
+.module {
+    background: white;
+
+    padding: 35px;
+    border-radius: 18px;
+
+    text-align: center;
+
+    font-size: 40px;
+
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.06);
+
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.module:hover {
+    transform: translateY(-10px);
+}
+
+.module h3 {
+    font-size: 25px;
+    margin-top: 15px;
+}
+
+.module p {
+    font-size: 16px;
+    color: #64748b;
+    margin-top: 10px;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.features {
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    padding:
+        clamp(40px, 7vw, 80px)
+        clamp(20px, 6vw, 80px);
+
+    gap: 25px;
+}
+
+.feature {
+    background: #2563eb;
+    color: white;
+
+    padding: 35px;
+
+    text-align: center;
+
+    font-size: clamp(20px, 2vw, 30px);
+
+    border-radius: 18px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    width: 100%;
+
+    padding: 35px 20px;
+
+    text-align: center;
+
+    background: #0f172a;
+    color: white;
+
+    margin-top: 80px;
+}
+
+
+/* =========================================================
+   HEATMAP UPLOAD PAGE
+========================================================= */
+
+.heatmap-page {
+    width: 100%;
+    padding:
+        clamp(20px, 4vw, 40px)
+        clamp(15px, 5vw, 60px);
+}
+
+.dashboard {
+    width: 100%;
+    min-width: 0;
+
+    display: grid;
+
+    grid-template-columns: minmax(280px, 340px) minmax(0, 1fr);
+
+    gap: 30px;
+
+    margin-top: 0;
+}
+
+.left-panel,
+.right-panel {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.card {
+    width: 100%;
+    min-width: 0;
+
+    background: white;
+
+    padding: clamp(18px, 3vw, 25px);
+
+    border-radius: 18px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.card h2 {
+    margin-bottom: 20px;
+    font-size: clamp(20px, 2vw, 26px);
+}
+
+
+/* =========================================================
+   UPLOAD AREA
+========================================================= */
+
+.upload-area {
+    width: 100%;
+
+    border: 2px dashed #cbd5e1;
+
+    padding: clamp(20px, 4vw, 35px);
+
+    border-radius: 16px;
+
+    text-align: center;
+}
+
+.upload-icon {
+    font-size: clamp(45px, 6vw, 60px);
+    margin-bottom: 15px;
+}
+
+.upload-area input {
+    margin: 20px 0;
+    width: 100%;
+}
+
+.upload-area button {
+    max-width: 100%;
+}
+
+.demo-btn {
+    margin-top: 20px;
+    width: 100%;
+}
+
+
+/* =========================================================
+   RECENT PROJECTS
+========================================================= */
+
+.recent-list {
+    list-style: none;
+}
+
+.recent-list li {
+    padding: 12px;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    color: #475569;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   DATASET INFORMATION
+========================================================= */
+
+.dataset-info {
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 20px;
+
+    text-align: center;
+}
+
+.dataset-info div {
+    min-width: 0;
+
+    background: #f8fafc;
+
+    padding: 20px;
+
+    border-radius: 12px;
+}
+
+.dataset-info strong,
+.dataset-info p {
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   DATA PREVIEW TABLE
+========================================================= */
 
 .preview-table {
     width: 100%;
+    max-width: 100%;
+
     max-height: 500px;
-    overflow-y: auto;
-    overflow-x: auto;
+
+    overflow: auto;
+
     border: 1px solid #e2e8f0;
     border-radius: 10px;
+
+    -webkit-overflow-scrolling: touch;
 }
 
 .preview-table table {
     width: max-content;
     min-width: 100%;
+
     border-collapse: collapse;
 }
 
 .preview-table th,
 .preview-table td {
     padding: 10px 14px;
+
     white-space: nowrap;
+
     border-bottom: 1px solid #e2e8f0;
 }
 
 .preview-table th {
     position: sticky;
     top: 0;
+
     background: white;
+
     z-index: 2;
 }
 
-.continue-section{
-    margin-top:30px;
-    display:flex;
-    justify-content:flex-end;
+
+/* =========================================================
+   CONTINUE BUTTON
+========================================================= */
+
+.continue-section {
+    width: 100%;
+
+    margin-top: 30px;
+
+    display: flex;
+    justify-content: flex-end;
 }
 
-.generate-btn{
-    background:#2563eb;
-    color:white;
-    border:none;
-    padding:16px 35px;
-    border-radius:12px;
-    cursor:pointer;
-    font-size:18px;
-    font-weight:600;
-    transition:.3s;
+.generate-btn {
+    display: inline-block;
+
+    background: #2563eb;
+    color: white;
+
+    border: none;
+
+    padding: 16px 35px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: 0.3s;
 }
 
-.generate-btn:hover{
-    background:#1d4ed8;
+.generate-btn:hover {
+    background: #1d4ed8;
 }
 
-.heatmap-card{
-    margin-top:30px;
-}
 
-#heatmapPlot{
-    width:100%;
-    height:700px;
-}
-
-.builder{
-
-display:grid;
-
-grid-template-columns:320px 1fr;
-
-gap:30px;
-
-padding:40px 60px;
-
-}
-
-.left-tools{
-
-display:flex;
-
-flex-direction:column;
-
-gap:20px;
-
-}
-
-.tool-card{
-
-background:white;
-
-padding:20px;
-
-border-radius:16px;
-
-box-shadow:0 5px 20px rgba(0,0,0,.08);
-
-}
-
-.tool-card h3{
-
-margin-bottom:15px;
-
-}
-
-.tool-card select{
-
-width:100%;
-
-padding:12px;
-
-border-radius:10px;
-
-border:1px solid #d1d5db;
-
-}
-
-.tool-card button{
-
-margin-top:10px;
-
-padding:10px 18px;
-
-border:none;
-
-background:#2563eb;
-
-color:white;
-
-border-radius:10px;
-
-cursor:pointer;
-
-margin-right:8px;
-
-}
-
-.viewer{
-
-background:white;
-
-border-radius:20px;
-
-box-shadow:0 5px 25px rgba(0,0,0,.08);
-
-overflow:hidden;
-
-}
-
-.viewer-toolbar{
-
-display:flex;
-
-gap:10px;
-
-padding:15px;
-
-background:#f8fafc;
-
-border-bottom:1px solid #e5e7eb;
-
-}
-
-.viewer-toolbar button{
-
-padding:10px 18px;
-
-border:none;
-
-background:#2563eb;
-
-color:white;
-
-border-radius:8px;
-
-cursor:pointer;
-
-}
-
-#heatmapViewer{
-
-height:850px;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-font-size:28px;
-
-color:#94a3b8;
-
-}
+/* =========================================================
+   PASTE DATA SECTION
+========================================================= */
 
 .paste-section {
+    width: 100%;
+
     margin-top: 20px;
+
     text-align: center;
 }
 
@@ -678,50 +619,265 @@ color:#94a3b8;
 
 #pasteData {
     width: 100%;
+    max-width: 100%;
+
     min-height: 180px;
+
     padding: 14px;
+
     border: 1px solid #cbd5e1;
     border-radius: 10px;
+
     resize: vertical;
+
     font-family: monospace;
     font-size: 14px;
-    box-sizing: border-box;
 }
 
 #loadPasteBtn {
+    width: 100%;
+
     margin-top: 12px;
-    padding: 10px 18px;
+
+    padding: 12px 18px;
+
     border: none;
     border-radius: 8px;
+
+    background: #2563eb;
+    color: white;
+
     cursor: pointer;
 }
 
-#heatmapPlot {
-    width: 50%;
-    margin: 0 Center;
+
+/* =========================================================
+   HEATMAP BUILDER
+========================================================= */
+
+.builder {
+    width: 100%;
+    min-width: 0;
+
+    display: grid;
+
+    grid-template-columns: minmax(260px, 320px) minmax(0, 1fr);
+
+    gap: 30px;
+
+    padding:
+        clamp(20px, 4vw, 40px)
+        clamp(15px, 5vw, 60px);
 }
 
-/* =======================================
+.left-tools {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.tool-card {
+    width: 100%;
+    min-width: 0;
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 16px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.tool-card h3 {
+    margin-bottom: 15px;
+}
+
+.tool-card label {
+    display: block;
+    margin: 12px 0 7px;
+    font-weight: 600;
+}
+
+.tool-card select,
+.tool-card input {
+    width: 100%;
+    max-width: 100%;
+
+    padding: 12px;
+
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+
+    background: white;
+}
+
+.tool-card button {
+    margin-top: 10px;
+
+    padding: 10px 18px;
+
+    border: none;
+
+    background: #2563eb;
+    color: white;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   HEATMAP VIEWER
+========================================================= */
+
+.viewer {
+    width: 100%;
+    min-width: 0;
+
+    background: white;
+
+    border-radius: 20px;
+
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   VIEWER TOOLBAR
+========================================================= */
+
+.viewer-toolbar {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    padding: 15px;
+
+    background: #f8fafc;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.viewer-toolbar button {
+    padding: 10px 16px;
+
+    border: none;
+
+    background: #2563eb;
+    color: white;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+}
+
+.viewer-toolbar span {
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+.viewer-toolbar input {
+    width: 85px;
+    min-width: 0;
+
+    padding: 9px 8px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    background: white;
+}
+
+.download-label {
+    margin-left: auto;
+}
+
+
+/* =========================================================
+   HEATMAP PLOT
+========================================================= */
+
+/*
+   IMPORTANT:
+   The plot container must use full available width.
+   Plotly itself can create a larger plot internally.
+*/
+
+#heatmapPlot {
+    width: 100%;
+    min-width: 0;
+
+    min-height: 500px;
+
+    overflow: auto;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/* =========================================================
+   HEATMAP VIEWER PLACEHOLDER
+========================================================= */
+
+#heatmapViewer {
+    width: 100%;
+
+    min-height: 650px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    font-size: 28px;
+
+    color: #94a3b8;
+
+    text-align: center;
+}
+
+
+/* =========================================================
    COLOR PALETTE SELECTOR
-======================================= */
+========================================================= */
 
 .palette-selector {
     display: flex;
     align-items: center;
+
     gap: 8px;
+
+    width: 100%;
 }
 
 .palette-dropdown {
     position: relative;
-    width: 220px;
+
+    width: min(260px, 100%);
 }
 
 .palette-selected {
     width: 100%;
-    height: 36px;
+    min-height: 36px;
 
     display: flex;
     align-items: center;
+
     gap: 10px;
 
     padding: 5px 10px;
@@ -762,8 +918,7 @@ color:#94a3b8;
     top: calc(100% + 4px);
     left: 0;
 
-    width: 260px;
-
+    width: min(260px, 90vw);
     max-height: 400px;
 
     overflow-y: auto;
@@ -771,11 +926,10 @@ color:#94a3b8;
     background: white;
 
     border: 1px solid #ccc;
-
     border-radius: 7px;
 
     box-shadow:
-        0 6px 20px rgba(0,0,0,0.15);
+        0 6px 20px rgba(0, 0, 0, 0.15);
 
     padding: 6px;
 
@@ -790,22 +944,17 @@ color:#94a3b8;
 
 .palette-group-title {
     font-size: 11px;
-
     font-weight: 600;
 
     color: #777;
 
-    padding:
-        8px
-        8px
-        5px;
+    padding: 8px 8px 5px;
 
     text-transform: uppercase;
 }
 
 .palette-option {
     display: flex;
-
     align-items: center;
 
     gap: 10px;
@@ -823,180 +972,833 @@ color:#94a3b8;
     background: #f2f2f2;
 }
 
-/* =======================================
+
+/* =========================================================
    PALETTE COLORS
-======================================= */
+========================================================= */
 
 .palette-RdBu {
-    background:
-        linear-gradient(
-            to right,
-            #67001f,
-            #f7f7f7,
-            #053061
-        );
+    background: linear-gradient(
+        to right,
+        #67001f,
+        #f7f7f7,
+        #053061
+    );
 }
 
 .palette-RdYlBu {
-    background:
-        linear-gradient(
-            to right,
-            #d73027,
-            #ffffbf,
-            #2166ac
-        );
+    background: linear-gradient(
+        to right,
+        #d73027,
+        #ffffbf,
+        #2166ac
+    );
 }
 
 .palette-BlueYellowRed {
-    background:
-        linear-gradient(
-            to right,
-            #0066ff,
-            #ffff00,
-            #ff0000
-        );
+    background: linear-gradient(
+        to right,
+        #0066ff,
+        #ffff00,
+        #ff0000
+    );
 }
 
 .palette-PurpleYellowGreen {
-    background:
-        linear-gradient(
-            to right,
-            #7b2cff,
-            #ffff00,
-            #00a651
-        );
+    background: linear-gradient(
+        to right,
+        #7b2cff,
+        #ffff00,
+        #00a651
+    );
 }
 
 .palette-BlueOrange {
-    background:
-        linear-gradient(
-            to right,
-            #0057ff,
-            #ffffff,
-            #ff4500
-        );
+    background: linear-gradient(
+        to right,
+        #0057ff,
+        #ffffff,
+        #ff4500
+    );
 }
 
 .palette-PinkGreen {
-    background:
-        linear-gradient(
-            to right,
-            #d000ff,
-            #ffffff,
-            #00a651
-        );
+    background: linear-gradient(
+        to right,
+        #d000ff,
+        #ffffff,
+        #00a651
+    );
 }
 
 .palette-RedCyan {
-    background:
-        linear-gradient(
-            to right,
-            #e60000,
-            #ffffff,
-            #00a6a6
-        );
+    background: linear-gradient(
+        to right,
+        #e60000,
+        #ffffff,
+        #00a6a6
+    );
 }
 
 .palette-MagentaGreen {
-    background:
-        linear-gradient(
-            to right,
-            #cc00ff,
-            #ffffff,
-            #00aa00
-        );
+    background: linear-gradient(
+        to right,
+        #cc00ff,
+        #ffffff,
+        #00aa00
+    );
 }
 
 .palette-TealOrange {
-    background:
-        linear-gradient(
-            to right,
-            #008c95,
-            #ffffff,
-            #ff6600
-        );
+    background: linear-gradient(
+        to right,
+        #008c95,
+        #ffffff,
+        #ff6600
+    );
 }
 
 .palette-VioletOrange {
-    background:
-        linear-gradient(
-            to right,
-            #5e00ff,
-            #ffffff,
-            #ff4500
-        );
+    background: linear-gradient(
+        to right,
+        #5e00ff,
+        #ffffff,
+        #ff4500
+    );
 }
 
 .palette-Viridis {
-    background:
-        linear-gradient(
-            to right,
-            #440154,
-            #21918c,
-            #fde725
-        );
+    background: linear-gradient(
+        to right,
+        #440154,
+        #21918c,
+        #fde725
+    );
 }
 
 .palette-Plasma {
-    background:
-        linear-gradient(
-            to right,
-            #0d0887,
-            #cc4778,
-            #f0f921
-        );
+    background: linear-gradient(
+        to right,
+        #0d0887,
+        #cc4778,
+        #f0f921
+    );
 }
 
 .palette-Inferno {
-    background:
-        linear-gradient(
-            to right,
-            #000004,
-            #bc3754,
-            #fcffa4
-        );
+    background: linear-gradient(
+        to right,
+        #000004,
+        #bc3754,
+        #fcffa4
+    );
 }
 
 .palette-Magma {
-    background:
-        linear-gradient(
-            to right,
-            #000004,
-            #b73779,
-            #fcfdbf
-        );
+    background: linear-gradient(
+        to right,
+        #000004,
+        #b73779,
+        #fcfdbf
+    );
 }
 
 .palette-Cividis {
-    background:
-        linear-gradient(
-            to right,
-            #00204c,
-            #7c7b78,
-            #fee838
-        );
+    background: linear-gradient(
+        to right,
+        #00204c,
+        #7c7b78,
+        #fee838
+    );
 }
 
-.founder-image img{
-    width:150px;
-    height:150px;
-    border-radius:50%;
-    object-fit:cover;
-    border:5px solid #010b1a;
-    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+/* =========================================================
+   ABOUT SECTION
+========================================================= */
+
+.about-section {
+    width: 100%;
+
+    padding:
+        clamp(50px, 7vw, 80px)
+        5%;
 }
 
-.founder-content{
-    flex:1;
-    min-width:300px;
+.about-content {
+    width: 100%;
+    max-width: 1400px;
+
+    margin: 0 auto;
 }
 
-.founder-sign{
-    margin-top:25px;
-    font-weight:bold;
+.about-content h2 {
+    text-align: center;
+
+    font-size: clamp(32px, 5vw, 50px);
+
+    margin-bottom: 30px;
 }
 
-.founder-sign h4{
-    margin-bottom:5px;
+.about-text {
+    width: 100%;
+
+    font-size: clamp(16px, 2vw, 20px);
+
+    line-height: 1.6;
+
+    text-align: justify;
 }
 
+
+/* =========================================================
+   FOUNDER SECTION
+========================================================= */
+
+.founder-section {
+    width: 100%;
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    padding:
+        0
+        5%
+        clamp(30px, 5vw, 60px);
+
+    text-align: center;
+}
+
+.founder-section h2 {
+    text-align: center;
+
+    font-size: clamp(32px, 5vw, 50px);
+
+    margin-bottom: 30px;
+}
+
+.founder-text {
+    width: 100%;
+
+    font-size: clamp(16px, 2vw, 20px);
+
+    line-height: 1.6;
+
+    text-align: justify;
+}
+
+.founder-text p {
+    width: 100%;
+
+    font-size: inherit;
+
+    line-height: inherit;
+
+    text-align: justify;
+
+    margin-bottom: 20px;
+}
+
+.founder-image {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    margin-top: 20px;
+}
+
+.founder-image img {
+    width: clamp(180px, 25vw, 250px);
+    height: clamp(180px, 25vw, 250px);
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 5px solid #010b1a;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.founder-sign {
+    margin-top: 25px;
+
+    font-weight: bold;
+
+    text-align: center;
+}
+
+.founder-sign h4 {
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.founder-sign p {
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+
+/* =========================================================
+   TABLET RESPONSIVE
+   1024px and below
+========================================================= */
+
+@media (max-width: 1024px) {
+
+    header {
+        gap: 18px;
+    }
+
+    .logo {
+        font-size: 28px;
+    }
+
+    .logo img {
+        width: 65px;
+        height: 65px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    .hero {
+        gap: 35px;
+    }
+
+    .hero-left {
+        width: 55%;
+    }
+
+    .hero-card {
+        width: min(380px, 45vw);
+    }
+
+    .dashboard {
+        grid-template-columns: 280px minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    .builder {
+        grid-template-columns: 280px minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    .dataset-info {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .viewer-toolbar {
+        align-items: flex-start;
+    }
+
+    .download-label {
+        margin-left: 0;
+    }
+}
+
+
+/* =========================================================
+   MOBILE / SMALL TABLET
+   768px and below
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* ---------- HEADER ---------- */
+
+    header {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        padding: 12px 16px;
+
+        gap: 10px;
+    }
+
+    .logo {
+        width: 100%;
+
+        justify-content: center;
+
+        font-size: 26px;
+    }
+
+    .logo img {
+        width: 55px;
+        height: 55px;
+    }
+
+    nav {
+        width: 100%;
+
+        gap: 10px 16px;
+
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .nav-buttons {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    header > .login {
+        width: auto;
+    }
+
+
+    /* ---------- HOME HERO ---------- */
+
+    .hero {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        padding: 50px 20px;
+
+        gap: 30px;
+    }
+
+    .hero-left {
+        width: 100%;
+    }
+
+    .hero-left h1 {
+        font-size: clamp(38px, 10vw, 55px);
+    }
+
+    .hero-card {
+        width: 100%;
+    }
+
+
+    /* ---------- FEATURES ---------- */
+
+    .features {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        padding: 40px 20px;
+
+        gap: 15px;
+    }
+
+    .feature {
+        padding: 25px 15px;
+
+        font-size: 20px;
+    }
+
+
+    /* ---------- HEATMAP UPLOAD PAGE ---------- */
+
+    .heatmap-page {
+        padding: 20px 15px;
+    }
+
+    .dashboard {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .left-panel,
+    .right-panel {
+        gap: 20px;
+    }
+
+    .dataset-info {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .dataset-info div {
+        padding: 15px 10px;
+    }
+
+    .continue-section {
+        justify-content: stretch;
+    }
+
+    .generate-btn {
+        width: 100%;
+
+        text-align: center;
+    }
+
+
+    /* ---------- HEATMAP BUILDER ---------- */
+
+    .builder {
+        display: flex;
+        flex-direction: column;
+
+        padding: 20px 15px;
+
+        gap: 20px;
+    }
+
+    .left-tools {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        align-items: start;
+
+        gap: 15px;
+    }
+
+    .tool-card {
+        padding: 16px;
+    }
+
+    .tool-card select,
+    .tool-card input {
+        font-size: 16px;
+    }
+
+    .viewer {
+        width: 100%;
+    }
+
+
+    /* ---------- BUILDER TOOLBAR ---------- */
+
+    .viewer-toolbar {
+        display: grid;
+
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+
+        gap: 8px;
+
+        padding: 12px;
+    }
+
+    .viewer-toolbar button {
+        width: 100%;
+
+        padding: 10px 6px;
+
+        font-size: 13px;
+    }
+
+    .viewer-toolbar span {
+        font-size: 13px;
+    }
+
+    .viewer-toolbar input {
+        width: 100%;
+
+        min-width: 0;
+    }
+
+    .download-label {
+        grid-column: 1 / -1;
+
+        margin: 5px 0 0;
+
+        text-align: center;
+    }
+
+
+    /* ---------- HEATMAP ---------- */
+
+    #heatmapPlot {
+        width: 100%;
+
+        min-height: 400px;
+
+        overflow: auto;
+    }
+
+    #heatmapViewer {
+        min-height: 500px;
+
+        font-size: 20px;
+    }
+
+
+    /* ---------- ABOUT ---------- */
+
+    .about-section {
+        padding: 50px 20px;
+    }
+
+    .about-text,
+    .founder-text,
+    .founder-text p {
+        text-align: left;
+    }
+
+    .founder-section {
+        padding: 0 20px 40px;
+    }
+
+    footer {
+        margin-top: 40px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   480px and below
+========================================================= */
+
+@media (max-width: 480px) {
+
+    body {
+        font-size: 15px;
+    }
+
+
+    /* ---------- HEADER ---------- */
+
+    header {
+        padding: 10px 12px;
+    }
+
+    .logo {
+        font-size: 22px;
+        gap: 7px;
+    }
+
+    .logo img {
+        width: 48px;
+        height: 48px;
+    }
+
+    nav {
+        gap: 8px 12px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    .login {
+        padding: 10px 18px;
+
+        font-size: 14px;
+    }
+
+
+    /* ---------- HOME ---------- */
+
+    .hero {
+        padding: 35px 15px;
+    }
+
+    .hero-left h1 {
+        font-size: 36px;
+    }
+
+    .hero-left p {
+        font-size: 16px;
+    }
+
+    .hero-card {
+        padding: 22px;
+        border-radius: 18px;
+    }
+
+    .hero-card h2 {
+        font-size: 24px;
+    }
+
+    .hero-card p {
+        font-size: 15px;
+    }
+
+
+    /* ---------- FEATURES ---------- */
+
+    .features {
+        grid-template-columns: 1fr;
+
+        padding: 30px 15px;
+    }
+
+    .feature {
+        padding: 20px;
+    }
+
+
+    /* ---------- CARDS ---------- */
+
+    .heatmap-page {
+        padding: 15px 10px;
+    }
+
+    .card {
+        padding: 16px;
+        border-radius: 14px;
+    }
+
+    .card h2 {
+        font-size: 20px;
+    }
+
+    .upload-area {
+        padding: 20px 12px;
+    }
+
+    #pasteData {
+        min-height: 140px;
+        font-size: 13px;
+    }
+
+
+    /* ---------- DATASET INFO ---------- */
+
+    .dataset-info {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    .dataset-info div {
+        padding: 12px 6px;
+        font-size: 13px;
+    }
+
+
+    /* ---------- BUILDER ---------- */
+
+    .builder {
+        padding: 15px 10px;
+    }
+
+    .left-tools {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .tool-card {
+        padding: 15px;
+        border-radius: 14px;
+    }
+
+
+    /* ---------- TOOLBAR ---------- */
+
+    .viewer-toolbar {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 10px;
+    }
+
+    .viewer-toolbar button {
+        font-size: 12px;
+        padding: 10px 5px;
+    }
+
+    .viewer-toolbar span {
+        font-size: 12px;
+    }
+
+    .viewer-toolbar input {
+        font-size: 14px;
+        padding: 8px 5px;
+    }
+
+    .download-label {
+        grid-column: 1 / -1;
+    }
+
+
+    /* ---------- HEATMAP ---------- */
+
+    #heatmapPlot {
+        min-height: 350px;
+    }
+
+    #heatmapViewer {
+        min-height: 400px;
+
+        padding: 15px;
+
+        font-size: 18px;
+    }
+
+
+    /* ---------- TEXT ---------- */
+
+    .about-content h2,
+    .founder-section h2 {
+        font-size: 30px;
+    }
+
+    .about-text,
+    .founder-text,
+    .founder-text p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .founder-image img {
+        width: 180px;
+        height: 180px;
+    }
+
+    footer {
+        padding: 25px 15px;
+        font-size: 14px;
+    }
+}
+
+
+/* =========================================================
+   EXTRA SMALL SCREENS
+   360px and below
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .logo {
+        font-size: 19px;
+    }
+
+    .logo img {
+        width: 42px;
+        height: 42px;
+    }
+
+    nav {
+        gap: 8px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .hero-left h1 {
+        font-size: 32px;
+    }
+
+    .viewer-toolbar {
+        grid-template-columns: 1fr;
+    }
+
+    .viewer-toolbar button,
+    .viewer-toolbar span,
+    .viewer-toolbar input {
+        width: 100%;
+    }
+
+    .viewer-toolbar span {
+        text-align: left;
+    }
+
+    .dataset-info {
+        grid-template-columns: 1fr;
+    }
+}
