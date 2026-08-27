@@ -732,20 +732,47 @@ footer {
 
 
 /* =========================================================
-   HEATMAP VIEWER
+   HEATMAP RESPONSIVE VIEWPORT
 ========================================================= */
 
 .viewer {
     width: 100%;
     min-width: 0;
+    max-width: 100%;
 
     background: white;
-
     border-radius: 20px;
 
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
 
     overflow: hidden;
+}
+
+
+/* This stays inside the mobile screen */
+
+.heatmap-scroll-container {
+    width: 100%;
+    max-width: 100%;
+
+    overflow-x: auto;
+    overflow-y: auto;
+
+    -webkit-overflow-scrolling: touch;
+
+    position: relative;
+}
+
+
+/* The graph itself is allowed to become wide */
+
+#heatmapPlot {
+    width: 100%;
+    min-width: 100%;
+
+    min-height: 500px;
+
+    position: relative;
 }
 
 
