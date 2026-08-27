@@ -1802,3 +1802,46 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+.citation-section {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.citation-box {
+    margin-top: 25px;
+    padding: 25px;
+    border-radius: 15px;
+    background: #f5f7fa;
+    text-align: left;
+    border: 1px solid #e1e5ea;
+}
+
+.citation-box p {
+    line-height: 1.7;
+}
+
+.citation-box .doi {
+    margin-top: 15px;
+}
+
+.citation-box a {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.citation-box a:hover {
+    text-decoration: underline;
+}
+
+.copy-citation-btn {
+    margin-top: 15px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
