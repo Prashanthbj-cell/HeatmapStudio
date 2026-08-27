@@ -1,8 +1,12 @@
 cff-version: 1.2.0
+
 message: "If you use HeatmapStudio in your research, please cite this software."
+
 title: "HeatmapStudio"
-version: "1.0.0"
+
 type: software
+
+version: "1.0.0"
 
 authors:
   - family-names: "B J"
@@ -12,11 +16,22 @@ date-released: 2026-08-28
 
 abstract: >
   HeatmapStudio is an interactive web-based platform for
-  generating and customizing heatmaps from biological and
-  omics datasets.
+  generating, customizing, and exporting publication-quality
+  heatmaps from biological and omics datasets.
 
 doi: "10.5281/zenodo.22133719"
+
+repository-code: "https://prashanthbj-cell.github.io/HeatmapStudio"
 
 url: "https://prashanthbj-cell.github.io/HeatmapStudio"
 
 license: "MIT"
+
+keywords:
+  - heatmap
+  - data visualization
+  - omics
+  - bioinformatics
+  - systems biology
+  - clustering
+  - biological data visualization
