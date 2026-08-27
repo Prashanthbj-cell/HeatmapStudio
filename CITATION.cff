@@ -14,24 +14,24 @@ authors:
 
 date-released: 2026-08-28
 
-abstract: >
-  HeatmapStudio is an interactive web-based platform for
-  generating, customizing, and exporting publication-quality
-  heatmaps from biological and omics datasets.
-
 doi: "10.5281/zenodo.22133719"
 
-repository-code: "https://prashanthbj-cell.github.io/HeatmapStudio"
+repository-code: "https://github.com/prashanthbj-cell/HeatmapStudio"
 
-url: "https://prashanthbj-cell.github.io/HeatmapStudio"
+url: "https://doi.org/10.5281/zenodo.22133719"
 
 license: "MIT"
+
+abstract: >
+  HeatmapStudio is an interactive web-based platform for generating,
+  customizing, and exporting publication-quality heatmaps from
+  biological and omics datasets.
 
 keywords:
   - heatmap
   - data visualization
   - omics
   - bioinformatics
-  - systems biology
   - clustering
   - biological data visualization
+  - data analysis
