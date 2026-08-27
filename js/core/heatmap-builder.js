@@ -2487,7 +2487,7 @@ fileName = fileName.replace(
     // RESTORE ORIGINAL HEATMAP
     // =======================================
 
-    await Plotly.react(
+     Plotly.react(
         plot,
         plot.data,
         originalLayout
